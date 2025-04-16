@@ -21,6 +21,6 @@ To remove the permission to test again
 
 
 ## Stripe
-- 
+- stripe listen --forward-to localhost:3000/api/stripe/webhook
 
 ![alt text](image.png)

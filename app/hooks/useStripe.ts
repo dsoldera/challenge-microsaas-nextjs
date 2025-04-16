@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
       loadStripeAsync();
     }, []);
 
-    async function createPaymentStripeCheckout(checkoutData: any) {
+    async function createPaymentStripeCheckout(checkoutData: { testeId: string }) {
       if (!stripe) return;
   
       try {
@@ -34,7 +34,7 @@ import { useEffect, useState } from "react";
     }
   
   
-    async function createSubscriptionStripeCheckout(checkoutData: any) {
+    async function createSubscriptionStripeCheckout(checkoutData: { testeId: string }) {
       if (!stripe) return;
   
       try {
