@@ -1,8 +1,16 @@
+import { redirect } from "next/navigation";
 import { handleAuth } from "../../actions/handle-auth";
+import { auth } from "../../lib/auth";
  
- export default function Login() {
+ export default async function Login() {
+    const session = await auth();
+ 
+   if (session) {
+     redirect("/dashboard");
+   }
+
    return (
-     <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
        <h1 className="text-4xl font-bold mb-10">Login</h1>
        <form action={handleAuth}>
          <button type="submit" className="border rounded-md px-2 py-1 cursor-pointer">Signin with Google</button>
