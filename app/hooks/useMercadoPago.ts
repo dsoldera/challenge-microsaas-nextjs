@@ -6,7 +6,7 @@ import { useEffect } from "react";
    const router = useRouter();
  
    useEffect(() => {
-     initMercadoPago(process.env.NEXT_PUBLIC_MERCADO_PAGO_PUBLIC_KEY!);
+     initMercadoPago(process.env.NEXT_PUBLIC_MERCADO_PAGO_PUBLIC!);
    }, []);
  
    async function createMercadoPagoCheckout({
